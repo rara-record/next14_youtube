@@ -1,6 +1,9 @@
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
+// @@map 속성은 Prisma 모델이 데이터베이스 테이블 이름과 다르게 설정하고 싶을 때 사용
+//
+
 generator client {
   provider = "prisma-client-js"
 }
@@ -11,7 +14,7 @@ datasource db {
 }
 
 model Account {
-  id                Int  @id @default(autoincrement())
+  id                Int     @id @default(autoincrement())
   userId            Int
   type              String
   provider          String
@@ -31,11 +34,11 @@ model Account {
 }
 
 model Session {
-  id           Int   @id @default(autoincrement())
-  sessionToken String   @unique
+  id           Int     @id @default(autoincrement())
+  sessionToken String  @unique
   userId       Int
   expires      DateTime
-  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user         User    @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@map("session")
 }
@@ -47,16 +50,55 @@ enum Roles {
 }
 
 model User {
-  id            Int    @id @default(autoincrement())
+  id            Int         @id @default(autoincrement())
   name          String
-  email         String   @unique
+  email         String      @unique
   emailVerified DateTime?
   image         String?
-  role          Roles     @default(member)
+  role          Roles       @default(member)
   accounts      Account[]
   sessions      Session[]
+  videos        Video[] 
 
   @@map("users")
+}
+
+model Thumbnails {
+  id             Int     @id @default(autoincrement())
+  defaultUrl     String
+  defaultWidth   Int
+  defaultHeight  Int
+  mediumUrl      String
+  mediumWidth    Int
+  mediumHeight   Int
+  highUrl        String
+  highWidth      Int
+  highHeight     Int
+  standardUrl    String?
+  standardWidth  Int?
+  standardHeight Int?
+  maxresUrl      String?
+  maxresWidth    Int?
+  maxresHeight   Int?
+  video          Video[]
+
+  @@map("thumbnails")
+}
+
+model Video {
+  id          Int        @id @default(autoincrement())
+  userId      Int
+  url         String     @unique
+  count       Int        @default(1)
+  title       String
+  description String
+  tags        String[]
+  createdAt   DateTime   @default(now())
+  thumbnailsId Int
+  thumbnails  Thumbnails @relation(fields: [thumbnailsId], references: [id], onDelete: Cascade)
+  user        User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("videos")
 }
 
 model VerificationToken {

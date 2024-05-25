@@ -1,0 +1,68 @@
+{
+  "kind": "youtube#videoListResponse",
+  "etag": "cQmMhJgTqA_WSGzk6SX29OKwbco",
+  "items": [
+    {
+      "kind": "youtube#video",
+      "etag": "V0sSuOPo1VwNE4fZVMUWKTrugYQ",
+      "id": "URBcer_Tf3I",
+      "snippet": {
+        "publishedAt": "2024-05-06T12:08:28Z",
+        "channelId": "UCVut4hqvrjQC4qDE3oc5qig",
+        "title": "𝐏𝐥𝐚𝐲𝐥𝐢𝐬𝐭 와 이 노래 제목 뭐야? 사람들이 자꾸 물어보는 나만 알고 싶은 숨은 띵곡",
+        "description": "#플레이리스트 #playlist #도입부 \n#팝송 #pop #데일리팝",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/URBcer_Tf3I/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/URBcer_Tf3I/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/URBcer_Tf3I/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/URBcer_Tf3I/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/URBcer_Tf3I/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "때껄룩ᴛᴀᴋᴇ ᴀ ʟᴏᴏᴋ",
+        "tags": [
+          "플레이리스트",
+          "playlist",
+          "팝송",
+          "도입부 좋은 노래",
+          "Pop",
+          "팝송추천",
+          "데일리팝",
+          "좋은 팝송",
+          "광고없는",
+          "노래 추천"
+        ],
+        "categoryId": "10",
+        "liveBroadcastContent": "none",
+        "localized": {
+          "title": "𝐏𝐥𝐚𝐲𝐥𝐢𝐬𝐭 와 이 노래 제목 뭐야? 사람들이 자꾸 물어보는 나만 알고 싶은 숨은 띵곡",
+          "description": "#플레이리스트 #playlist #도입부 \n#팝송 #pop #데일리팝"
+        },
+        "defaultAudioLanguage": "ko"
+      }
+    }
+  ],
+  "pageInfo": {
+    "totalResults": 1,
+    "resultsPerPage": 1
+  }
+}

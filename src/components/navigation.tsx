@@ -18,8 +18,8 @@ export default function Navigation() {
           SCRAPING
         </Link>
         <div className="navbar__list">
-          <Link href="/users/mypage" className="navbar__list--item">
-            마이페이지
+          <Link href="/users/dashboard" className="navbar__list--item">
+            대시보드
           </Link>
           <Link href="/community" className="navbar__list--item">
             커뮤니티
