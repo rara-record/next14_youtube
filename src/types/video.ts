@@ -1,24 +1,31 @@
-type Thumbnail = {
+type ThumbnailType = {
   url: string;
   width: number;
   height: number;
 };
 
-type Thumbnails = {
+type ThumbnailListType = {
   id: number;
-  default: Thumbnail;
-  medium: Thumbnail;
-  high: Thumbnail;
-  standard?: Thumbnail;
-  maxres?: Thumbnail;
+  default: ThumbnailType;
+  medium: ThumbnailType;
+  high: ThumbnailType;
+  standard?: ThumbnailType;
+  maxres?: ThumbnailType;
 };
 
-type Video = {
+type VideoType = {
   id: number;
+  userId: number;
   url: string;
-  counst: number;
   title: string;
   description: string;
-  thumbnails: Thumbnails;
   tags: string[];
+  channelId: string;
+  channelTitle: string;
+  embeddable: boolean;
+  viewCount: string;
+  likeCount: string;
+  favoriteCount: string;
+  thumbnailsId: string;
+  thumbnails: ThumbnailListType;
 };

@@ -1,22 +1,9 @@
 "use client";
 
 import axios from "axios";
-import { useQuery } from "@tanstack/react-query";
-import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 
-const fetchVideo = async () => {
-  const { data } = await axios.get("/api/video");
-  return data;
-};
-
 const UserForm = () => {
-  const { data, isLoading, error } = useQuery({
-    queryKey: ["video"],
-    queryFn: fetchVideo,
-  });
-
-  const router = useRouter();
   const {
     register,
     handleSubmit,
@@ -24,14 +11,26 @@ const UserForm = () => {
     formState: { errors },
   } = useForm();
 
-  console.log(data, "data");
-
   return (
     <>
       <form
         className="flex w-full gap-5 space-y-4 rounded-lg bg-white p-6 shadow-lg"
         onSubmit={handleSubmit(async (data) => {
-          console.log(data);
+          try {
+            const result = await axios.post("/api/video", data);
+            if (result.status === 200) {
+              console.log(result);
+              // 성공 케이스
+              // toast.success("맛집을 등록했습니다.");
+              // router.replace(`/stores/${result?.data?.id}`);
+            } else {
+              // 실패 케이스
+              // toast.error("다시 시도해주세요");
+            }
+          } catch (e) {
+            console.log(e);
+            // toast.error("데이터 생성중 문제가 생겼습니다. 다시 시도해주세요.");
+          }
         })}
       >
         <div className="w-full">
@@ -58,21 +57,6 @@ const UserForm = () => {
           Submit
         </button>
       </form>
-      <div>
-        {data?.map((video) => (
-          <div key={video.id} className="my-2">
-            <iframe
-              width="560"
-              height="315"
-              src={video.url}
-              title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
-            ></iframe>
-          </div>
-        ))}
-      </div>
     </>
   );
 };

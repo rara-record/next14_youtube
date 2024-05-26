@@ -99,8 +99,8 @@ model Video {
   viewCount     String
   likeCount     String
   favoriteCount String
-  createdAt     DateTime   @default(now())
   thumbnailsId  Int
+  createdAt     DateTime   @default(now())
   thumbnails    Thumbnails @relation(fields: [thumbnailsId], references: [id], onDelete: Cascade)
   user          User       @relation(fields: [userId], references: [id], onDelete: Cascade)
 
