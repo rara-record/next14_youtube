@@ -3,18 +3,6 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 import * as data from "../src/data/video.json";
 
-// id          Int        @id @default(autoincrement())
-// userId      Int
-// url         String     @unique
-// count       Int        @default(1)
-// title       String
-// description String
-// tags        String[]
-// createdAt   DateTime   @default(now())
-// thumbnailsId Int
-// thumbnails  Thumbnails @relation(fields: [thumbnailsId], references: [id], onDelete: Cascade)
-// user        User       @relation(fields: [userId], references: [id], onDelete: Cascade)
-
 async function seedData() {
   for (const video of data.items) {
     const thumbnailData = await prisma.thumbnails.create({
@@ -39,10 +27,16 @@ async function seedData() {
 
     const videoData = {
       userId: 2,
-      url: "https://www.youtube.com/watch?v=URBcer_Tf3I",
+      url: `https://www.youtube.com/embed/${video.id}`,
       title: video.snippet.title,
       description: video.snippet.description,
       tags: video.snippet.tags,
+      channelId: video.snippet.channelId,
+      channelTitle: video.snippet.channelTitle,
+      embeddable: video.status.embeddable,
+      viewCount: video.statistics.viewCount,
+      likeCount: video.statistics.likeCount,
+      favoriteCount: video.statistics.favoriteCount,
       thumbnailsId: thumbnailData.id,
     };
 
