@@ -1,0 +1,4 @@
+-- AlterTable
+ALTER TABLE "videos" ALTER COLUMN "favoriteCount" SET DATA TYPE TEXT,
+ALTER COLUMN "likeCount" SET DATA TYPE TEXT,
+ALTER COLUMN "viewCount" SET DATA TYPE TEXT;

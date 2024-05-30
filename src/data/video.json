@@ -1,0 +1,74 @@
+{
+  "kind": "youtube#videoListResponse",
+  "etag": "65v_ytmg4NRZHrdfYE7HyC_lQls",
+  "items": [
+    {
+      "kind": "youtube#video",
+      "etag": "MCDiVTYDnBKPVeHR9cLws8i6_fs",
+      "id": "TWowEQyg9zg",
+      "snippet": {
+        "publishedAt": "2024-05-25T20:56:37Z",
+        "channelId": "UCVut4hqvrjQC4qDE3oc5qig",
+        "title": "𝐏𝐥𝐚𝐲𝐥𝐢𝐬𝐭 1초만 들어도 바로 따라부르는 띵곡 팝송☁ | 한국인이라면 무조건 좋아하는 팝송",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/TWowEQyg9zg/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/TWowEQyg9zg/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/TWowEQyg9zg/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/TWowEQyg9zg/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/TWowEQyg9zg/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "때껄룩ᴛᴀᴋᴇ ᴀ ʟᴏᴏᴋ",
+        "tags": ["플레이리스트", "playlist"],
+        "categoryId": "10",
+        "liveBroadcastContent": "none",
+        "localized": {
+          "title": "𝐏𝐥𝐚𝐲𝐥𝐢𝐬𝐭 1초만 들어도 바로 따라부르는 띵곡 팝송☁ | 한국인이라면 무조건 좋아하는 팝송",
+          "description": ""
+        },
+        "defaultAudioLanguage": "ko"
+      },
+      "status": {
+        "uploadStatus": "processed",
+        "privacyStatus": "unlisted",
+        "license": "youtube",
+        "embeddable": true,
+        "publicStatsViewable": true,
+        "madeForKids": false
+      },
+      "statistics": {
+        "viewCount": "838",
+        "likeCount": "21",
+        "favoriteCount": "0",
+        "commentCount": "3"
+      },
+      "player": {
+        "embedHtml": "<iframe width=\"480\" height=\"270\" src=\"//www.youtube.com/embed/TWowEQyg9zg\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
+      }
+    }
+  ],
+  "pageInfo": {
+    "totalResults": 1,
+    "resultsPerPage": 1
+  }
+}

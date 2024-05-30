@@ -1,12 +1,17 @@
 import type { NextAuthConfig } from "next-auth";
-import Google from "@auth/core/providers/google";
+import GoogleProvider from "next-auth/providers/google";
 
 export default {
   secret: process.env.AUTH_SECRET,
   basePath: "/api/auth",
-  providers: [Google],
+  providers: [
+    GoogleProvider({
+      clientId: process.env.AUTH_GOOGLE_ID || "",
+      clientSecret: process.env.AUTH_GOOGLE_SECRET || "",
+    }),
+  ],
   pages: {
-    // signIn: "/signin",
+    signIn: "/signin",
     // signOut: "/signout",
   },
 } satisfies NextAuthConfig;
